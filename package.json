@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Oopscurity/t8on/issues"
   },
-  "homepage": "https://github.com/Oopscurity/t8on#readme"
+  "homepage": "https://github.com/Oopscurity/t8on#readme",
+  "dependencies": {
+    "lodash.merge": "^4.6.0"
+  }
 }
