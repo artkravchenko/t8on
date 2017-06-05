@@ -29,5 +29,9 @@
   "homepage": "https://github.com/Oopscurity/t8on#readme",
   "dependencies": {
     "lodash.merge": "^4.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
