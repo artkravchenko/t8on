@@ -1,0 +1,30 @@
+{
+  "name": "t8on",
+  "version": "0.1.0",
+  "description": "Set up, format and translate phrases easily",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oopscurity/t8on.git"
+  },
+  "keywords": [
+    "l10n",
+    "locale",
+    "localization",
+    "localize",
+    "translation",
+    "translate",
+    "language",
+    "format",
+    "dictionary"
+  ],
+  "author": "Artem Kravchenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Oopscurity/t8on/issues"
+  },
+  "homepage": "https://github.com/Oopscurity/t8on#readme"
+}
