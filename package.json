@@ -4,7 +4,10 @@
   "description": "Set up, format and translate phrases easily",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "clean": "rm -rf lib",
+    "build": "babel src --loose --out-dir lib",
+    "test": "mocha",
+    "prepublish": "npm run test && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
