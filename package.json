@@ -7,7 +7,8 @@
     "clean": "rm -rf lib",
     "build": "babel src --loose --out-dir lib",
     "test": "mocha",
-    "prepublish": "npm run test && npm run clean && npm run build"
+    "prepublish": "npm run test && npm run clean && npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
