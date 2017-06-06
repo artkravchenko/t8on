@@ -1,0 +1,7 @@
+{
+  "cache": true,
+  "include": ["./src/**/*.js"],
+  "report-dir": "./coverage",
+  "reporter": ["lcov"],
+  "sourceMap": false
+}
