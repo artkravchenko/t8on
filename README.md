@@ -2,7 +2,13 @@
 
 `t8on` is a JavaScript library for managing sets of locales and phrases in the application.
 
+## Usage
+
+The paragraph is under development.
+
 ## Installation
+
+`t8on` is available as the [`t8on`](https://www.npmjs.com/package/t8on) package on [npm](https://www.npmjs.com/).
 
 `npm install --save t8on`
 
