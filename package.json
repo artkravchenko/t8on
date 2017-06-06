@@ -7,6 +7,7 @@
     "clean": "rm -rf lib",
     "build": "babel src --loose --out-dir lib",
     "test": "mocha",
+    "travis": "npm run test",
     "prepublish": "npm run test && npm run clean && npm run build",
     "postinstall": "npm run build"
   },
