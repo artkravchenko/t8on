@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "rm -rf lib .nyc_output coverage",
     "build": "babel src --loose --out-dir lib",
-    "test": "NODE_ENV=test mocha",
-    "test:cover": "NODE_ENV=test nyc mocha",
-    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "test": "cross-env NODE_ENV=test mocha",
+    "test:cover": "cross-env NODE_ENV=test nyc mocha",
+    "coverage": "cross-env NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
     "prepublishOnly": "npm run test && npm run clean && npm run build",
     "postinstall": "npm run build"
   },
@@ -43,6 +43,7 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.0.2",
     "coveralls": "^2.13.1",
+    "cross-env": "^5.0.0",
     "mocha": "^3.4.2",
     "nyc": "^11.0.2"
   }
