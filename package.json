@@ -36,7 +36,8 @@
   },
   "homepage": "https://github.com/Oopscurity/t8on#readme",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "dependencies": {
     "lodash.merge": "^4.6.0"
