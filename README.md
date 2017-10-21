@@ -14,7 +14,7 @@ To install the latest stable version, type
 
 `npm install --save t8on`
 
-You can also access package's files on [unpkg.com](https://unpkg.com/t8on).
+You can also access package's files on [unpkg.com](https://unpkg.com/t8on/).
 
 The package provides a [CommonJS](https://webpack.js.org/api/module-methods/#commonjs) module in the `lib` directory and a production-ready [UMD](https://github.com/umdjs/umd) build in the `dist` folder.
 
