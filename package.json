@@ -1,6 +1,6 @@
 {
   "name": "t8on",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Set up, format and translate phrases easily",
   "main": "lib/index.js",
   "scripts": {
