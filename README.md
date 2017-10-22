@@ -1,6 +1,12 @@
-# t8on &middot; [![Build Status](https://travis-ci.org/Oopscurity/t8on.svg?branch=master)](https://travis-ci.org/Oopscurity/t8on) [![Coverage Status](https://coveralls.io/repos/github/Oopscurity/t8on/badge.svg?branch=master)](https://coveralls.io/github/Oopscurity/t8on?branch=master)
+# t8on
 
 `t8on` is a JavaScript library for managing sets of locales and both basic and customizable phrases in the application.
+
+It's lightweight and useful enough at the same time, being able to run in various environments due to the power of [UMD](https://github.com/umdjs/umd).
+
+[![Build Status](https://travis-ci.org/Oopscurity/t8on.svg?branch=master)](https://travis-ci.org/Oopscurity/t8on) [![Coverage Status](https://coveralls.io/repos/github/Oopscurity/t8on/badge.svg?branch=master)](https://coveralls.io/github/Oopscurity/t8on?branch=master)
+
+___
 
 ## Quick example
 
