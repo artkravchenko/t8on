@@ -27,7 +27,7 @@ toEnglish('greeting_q');
 // => How do you do?
 ```
 
-Although the library is simple, some details and convenient methods are missing. So it's recommended to read the following **"Usage"** section to learn how to configure and to use the library properly.
+Although the library is simple, some details and convenient methods are missing in the example above. So it's recommended to read the following **"Usage"** section to learn how to configure and to use the library properly.
 
 ## Usage
 
