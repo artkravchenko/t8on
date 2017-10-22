@@ -17,14 +17,14 @@ t.loadRoot({
 });
 
 t.translate('welcome', 'ru');
-// => Добро пожаловать!
+// => 'Добро пожаловать!'
 
 t.format('welcome', 'en', 'John');
-// => Hello, John!
+// => 'Hello, John!'
 
 const toEnglish = t.translateTo('en');
 toEnglish('greeting_q');
-// => How do you do?
+// => 'How do you do?'
 ```
 
 Although the library is simple, some details and convenient methods are missing in the example above. So it's recommended to read the following **"Usage"** section to learn how to configure and to use the library properly.
