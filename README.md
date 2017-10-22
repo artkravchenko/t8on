@@ -5,10 +5,15 @@
 ## Quick example
 
 ```javascript
+t.loadRoot({
+  en: { welcome: 'Welcome, %0!', greeting_q: 'How do you do?' },
+  ru: { welcome: 'Добро пожаловать!' }
+});
+
 t.translate('welcome', 'ru');
 // => Добро пожаловать!
 
-t.format('greeting', 'en', 'John');
+t.format('welcome', 'en', 'John');
 // => Hello, John!
 
 const toEnglish = t.translateTo('en');
@@ -16,7 +21,7 @@ toEnglish('greeting_q');
 // => How do you do?
 ```
 
-Configuration is missing here. However, it's simple too. Read the following **"Usage"** section to learn how to configure and use the library properly.
+Although the library is simple, some details and convenient methods are missing. So it's recommended to read the following **"Usage"** section to learn how to configure and to use the library properly.
 
 ## Usage
 
