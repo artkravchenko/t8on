@@ -1,6 +1,22 @@
 # t8on &middot; [![Build Status](https://travis-ci.org/Oopscurity/t8on.svg?branch=master)](https://travis-ci.org/Oopscurity/t8on) [![Coverage Status](https://coveralls.io/repos/github/Oopscurity/t8on/badge.svg?branch=master)](https://coveralls.io/github/Oopscurity/t8on?branch=master)
 
-`t8on` is a JavaScript library for managing sets of locales and phrases in the application.
+`t8on` is a JavaScript library for managing sets of locales and both basic and customizable phrases in the application.
+
+## Quick example
+
+```javascript
+t.translate('welcome', 'ru');
+// => Добро пожаловать!
+
+t.format('greeting', 'en', 'John');
+// => Hello, John!
+
+const toEnglish = t.translateTo('en');
+toEnglish('greeting_q');
+// => How do you do?
+```
+
+Configuration is missing here. However, it's simple too. Read the following **"Usage"** section to learn how to configure and use the library properly.
 
 ## Usage
 
