@@ -64,7 +64,7 @@ export function Translation() {
     this.translate(phrase, locale);
 
   this.translateCurrent = phrase =>
-    this.translate(phrase, this.currentLocale);
+    this.translate(phrase, this.currentLocale || '');
 
   this.format = (phrase, locale, ...args) => {
     if (!(locale in dictionary) || !(phrase in dictionary[locale])) {
@@ -84,7 +84,7 @@ export function Translation() {
     this.format(phrase, locale, ...args);
 
   this.formatCurrent = (phrase, ...args) =>
-    this.format(phrase, this.currentLocale, ...args);
+    this.format(phrase, this.currentLocale || '', ...args);
 }
 
 const t = new Translation();
