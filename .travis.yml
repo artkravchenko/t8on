@@ -11,5 +11,4 @@ cache:
 notifications:
   email: false
 
-script: "npm run test:cover"
-after_success: "npm run coverage"
+script: "npm run travis"

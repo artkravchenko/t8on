@@ -4,14 +4,15 @@
   "description": "Set up, format and translate phrases easily",
   "main": "lib/index.js",
   "scripts": {
-    "clean": "rm -rf lib .nyc_output coverage",
     "build": "run-p build:lib build:umd",
     "build:lib": "cross-env BABEL_ENV=cjs babel src --loose --out-dir lib",
-    "build:umd": "webpack --config webpack/umd.config.js",
+    "build:umd": "webpack --config res/umd.config.js",
+    "clean": "rm -rf lib .nyc_output coverage",
+    "coverage": "cross-env BABEL_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "prepublishOnly": "run-s test clean build",
     "test": "cross-env BABEL_ENV=test mocha",
     "test:cover": "cross-env BABEL_ENV=test nyc mocha",
-    "coverage": "cross-env BABEL_ENV=test nyc report --reporter=text-lcov | coveralls",
-    "prepublishOnly": "npm run test && npm run clean && npm run build"
+    "travis": "run-s test:cover coverage"
   },
   "repository": {
     "type": "git",

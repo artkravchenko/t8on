@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const context = path.resolve(__dirname, '..');
 
 module.exports = {
-  context: context,
+  context,
   entry: './src/index.js',
   module: {
     rules: [
