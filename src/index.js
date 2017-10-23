@@ -87,20 +87,40 @@ export function Translation() {
     this.format(phrase, this.currentLocale || '', ...args);
 }
 
+const deprecated = (f) => {
+  const g = function () {
+    if (!this.calledBefore) {
+      this.calledBefore = true;
+      // eslint-disable-next-line no-console
+      console.warn(
+        'Deprecation warning: usage of t8on singleton\'s properties ' +
+        'and methods imported manually is considered deprecated. ' +
+        'All *named* exports except Translation will be removed ' +
+        'in upcoming major release. Please export the singleton and call ' +
+        'its methods directly, such as t.translate()'
+      );
+    }
+    return f.apply(null, arguments);
+  };
+
+  return g;
+};
+
 const t = new Translation();
 
-export const {
-  format,
-  formatTo,
-  formatCurrent,
-  translate,
-  translateTo,
-  translateCurrent,
-  setLocale,
-  load,
-  loadRoot,
-  currentLocale,
-  fallbackLocale
-} = t;
+export const format = deprecated(t.format);
+export const formatTo = deprecated(t.formatTo);
+export const formatCurrent = deprecated(t.formatCurrent);
+
+export const translate = deprecated(t.translate);
+export const translateTo = deprecated(t.translateTo);
+export const translateCurrent = deprecated(t.translateCurrent);
+
+export const load = deprecated(t.load);
+export const loadRoot = deprecated(t.loadRoot);
+export const setLocale = deprecated(t.setLocale);
+
+export const currentLocale = t.currentLocale;
+export const fallbackLocale = t.fallbackLocale;
 
 export default t;
