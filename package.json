@@ -11,8 +11,7 @@
     "test": "cross-env BABEL_ENV=test mocha",
     "test:cover": "cross-env BABEL_ENV=test nyc mocha",
     "coverage": "cross-env BABEL_ENV=test nyc report --reporter=text-lcov | coveralls",
-    "prepublishOnly": "npm run test && npm run clean && npm run build",
-    "postinstall": "npm run build"
+    "prepublishOnly": "npm run test && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
