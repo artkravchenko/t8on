@@ -1,0 +1,70 @@
+/* @flow */
+declare function merge(object: Object, source?: ?Object): Object;
+
+declare type Dictionary = {
+  [locale: string]: Translations
+};
+
+declare type Translations = {
+  [phrase: string]: string
+};
+
+declare class Translation {
+  currentLocale: ?string;
+  fallbackLocale: ?string;
+
+  load(locale: string, pairs: Translations): Translation;
+  loadRoot(root: Dictionary): Translation;
+  setLocale(locale: string, pairs: Translations): Translation;
+
+  translate(phrase: string, locale: string): string;
+  translateTo(locale: string): (phrase: string) => string;
+  translateCurrent(phrase: string): string;
+
+  format(phrase: string, locale: string, ...args: Array<string>): string;
+  formatTo(locale: string): (phrase: string, ...args: Array<string>) => string;
+  formatCurrent(phrase: string, ...args: Array<string>): string;
+}
+
+declare var t: Translation;
+
+declare function load(locale: string, pairs: Translations): Translation;
+declare function loadRoot(root: Dictionary): Translation;
+declare function setLocale(locale: string, pairs: Translations): Translation;
+
+declare function translate(phrase: string, locale: string): string;
+declare function translateTo(locale: string): (phrase: string) => string;
+declare function translateCurrent(phrase: string): string;
+
+declare function format(
+  phrase: string,
+  locale: string,
+  ...args: Array<string>
+): string;
+
+declare function formatTo(
+  locale: string
+): (phrase: string, ...args: Array<string>) => string;
+
+declare function formatCurrent(
+  phrase: string,
+  ...args: Array<string>
+): string;
+
+declare var currentLocale: ?string;
+declare var fallbackLocale: ?string;
+
+export type {
+  Translation,
+  Translations,
+  Dictionary
+};
+
+export {
+  load, loadRoot, setLocale,
+  translate, translateTo, translateCurrent,
+  format, formatTo, formatCurrent,
+  currentLocale, fallbackLocale
+};
+
+export default t;
