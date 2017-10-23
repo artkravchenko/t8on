@@ -3,6 +3,44 @@
 All notable changes to `t8on` will be documented in this file.
 This library adheres to [Semantic Versioning](http://semver.org/). 
 
+## [v0.2.0-alpha.1](https://github.com/oopscurity/t8on/releases/tag/v0.2.0-alpha.1) - 2017/10/24
+
+### Deprecation notice
+
+All named exports except `Transition` are considered deprecated and they will be removed at the major release (`1.0.0`). 
+
+### Bug fixes
+
+`Translation#load(locale, phrases)` now preserves existing locale's dictionary even if new key & value pair is present but the value is equal to `undefined`. (This behaviour is similar to `Translation#loadRoot(dictionary)`.)
+
+### Optimization
+
+Dropped `lodash.merge` dependency and reduced the size of UMD build to `2.8 kB` from over `14 kB`. :boom:
+
+Removed reduntant `postinstall` npm script.
+
+### Documentation
+
+Extended the README with large ["Usage"](https://github.com/Oopscurity/t8on#usage) section which covers almost all aspects of the library usage.
+
+Added a brief ["Quick example"](https://github.com/Oopscurity/t8on#quick-example) paragraph there to make a short but notable introduction to `t8on`.
+
+Added the change log you're reading now. :blush:
+
+Changed the project's description.
+
+### Type definitions
+
+Provided highly experimental `Flow` and `TypeScript` type definitions which most likely will cause type checking errors on your side.
+
+### Misc: build options, supported environments
+
+Moved all distributable sources to the `dist` folder.
+
+Added `es` module building pipeline targeting to `dist/t8on.es.js`.
+
+Use `loose` babel plugins' options to support wider range of environments.
+
 ## [v0.1.5](https://github.com/oopscurity/t8on/releases/tag/v0.1.5) - 2017/10/22
 
 Prodution-ready UMD build is now available in the `dist` folder.
