@@ -39,9 +39,7 @@
     "dist",
     "lib"
   ],
-  "dependencies": {
-    "lodash.merge": "^4.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
