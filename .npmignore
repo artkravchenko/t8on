@@ -1,8 +1,10 @@
+res
 src
 test
-webpack
 
 .babelrc
+.eslintignore
+.eslintrc
 .gitignore
 .npmignore
 .nycrc
