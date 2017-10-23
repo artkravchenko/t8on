@@ -56,6 +56,13 @@ describe('Translate', () => {
       });
     });
 
+    it('doesn\'t replace existing value if new value is undefined', () => {
+      t.load('en', { test: undefined });
+      expect(t.dictionary()).to.deep.equal({
+        en: { test: 'Test expression' }
+      });
+    });
+
     it('sets trees of different locales independently', () => {
       t.load('ru', { 'test': 'Тестовое выражение' });
       expect(t.dictionary()).to.deep.equal({
@@ -107,6 +114,18 @@ describe('Translate', () => {
       expect(t.dictionary()).to.deep.equal({
         en: { test: 'Test expression', new: 'New test expression' },
         ru: { test: 'Тестовое выражение' }
+      });
+    });
+
+    it('doesn\'t replace existing value if new value is undefined', () => {
+      t.loadRoot({ en: { test: 'Test expression' } });
+      expect(t.dictionary()).to.deep.equal({
+        en: { test: 'Test expression' }
+      });
+
+      t.loadRoot({ en: { test: undefined } });
+      expect(t.dictionary()).to.deep.equal({
+        en: { test: 'Test expression' }
       });
     });
 

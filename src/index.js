@@ -12,7 +12,7 @@ export function Translation() {
     if (!(locale in dictionary)) {
       dictionary[locale] = {};
     }
-    Object.assign(dictionary[locale], pairs);
+    merge(dictionary[locale], pairs);
     return this;
   };
 
