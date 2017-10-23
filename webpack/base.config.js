@@ -21,7 +21,10 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
+        pure_getters: true,
         screw_ie8: true,
+        unsafe: true,
+        unsafe_comps: true,
         warnings: false,
       },
       sourceMap: false,
