@@ -8,7 +8,7 @@
     "definition": "dist/t8on.d.ts"
   },
   "scripts": {
-    "build": "run-p build:cjs build:es build:typedefs build:umd",
+    "build": "mkdir dist && run-p build:cjs build:es build:typedefs build:umd",
     "build:cjs": "cross-env BABEL_ENV=cjs babel src -o dist/t8on.js",
     "build:es": "babel src -o dist/t8on.es.js",
     "build:typedefs": "node ./res/copy-typedefs.js",
