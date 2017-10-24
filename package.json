@@ -1,6 +1,6 @@
 {
   "name": "t8on",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-alpha.2",
   "description": "Set up, format and translate phrases easily",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",

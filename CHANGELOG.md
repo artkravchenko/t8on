@@ -3,6 +3,24 @@
 All notable changes to `t8on` will be documented in this file.
 This library adheres to [Semantic Versioning](http://semver.org/). 
 
+## [v0.2.0-alpha.2](https://github.com/oopscurity/t8on/releases/tag/v0.2.0-alpha.2) - 2017/10/24
+
+### Bug fixes
+
+Fixed possible errors caused with deprecation function on NodeJS environments if deprecated named exports are used.
+
+### Optimization
+
+Restructured the distributables to skip singleton creation if only `Translation` class is needed. Import the class this way:
+
+```javascript
+import Translation from 't8on/translation';
+```
+
+### Test coverage
+
+Wrote comprehensive test cases for `deprecate` utility function.
+
 ## [v0.2.0-alpha.1](https://github.com/oopscurity/t8on/releases/tag/v0.2.0-alpha.1) - 2017/10/24
 
 ### Deprecation notice
