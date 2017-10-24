@@ -2,15 +2,15 @@
   "name": "t8on",
   "version": "0.2.0-alpha.1",
   "description": "Set up, format and translate phrases easily",
-  "main": "dist/t8on.js",
-  "module": "dist/t8on.es.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "typescript": {
     "definition": "dist/t8on.d.ts"
   },
   "scripts": {
-    "build": "mkdir dist && run-p build:cjs build:es build:typedefs build:umd",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src -o dist/t8on.js",
-    "build:es": "babel src -o dist/t8on.es.js",
+    "build": "mkdir -p dist && run-p build:cjs build:es build:typedefs build:umd",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src -d dist/cjs",
+    "build:es": "babel src -d dist/es",
     "build:typedefs": "node ./res/copy-typedefs.js",
     "build:umd": "webpack --config res/umd.config.js",
     "clean": "rm -rf .nyc_output coverage dist",

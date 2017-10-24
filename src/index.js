@@ -1,26 +1,5 @@
-function merge(object, source) {
-  if (typeof source === 'undefined' || source === null) {
-    return object;
-  }
-
-  // eslint-disable-next-line no-var
-  for (var v0, v1, k, keys = Object.keys(source), l = keys.length, i = 0; i < l; ++i) {
-    k = keys[i], v1 = source[k];
-    if (typeof v1 !== 'undefined') {
-      v0 = object[k];
-      if (
-        typeof v1 === 'object' && v1 !== null &&
-        typeof v0 === 'object' && v0 !== null
-      ) {
-        merge(v0, v1);
-      } else {
-        object[k] = v1;
-      }
-    }
-  }
-
-  return object;
-}
+import deprecate from './util/deprecate';
+import merge from './util/merge';
 
 export function Translation() {
   const dictionary = {};
@@ -87,38 +66,26 @@ export function Translation() {
     this.format(phrase, this.currentLocale || '', ...args);
 }
 
-const deprecated = (f) => {
-  const g = function () {
-    if (!this.calledBefore) {
-      this.calledBefore = true;
-      // eslint-disable-next-line no-console
-      console.warn(
-        'Deprecation warning: usage of t8on singleton\'s properties ' +
-        'and methods imported manually is considered deprecated. ' +
-        'All *named* exports except Translation will be removed ' +
-        'in upcoming major release. Please export the singleton and call ' +
-        'its methods directly, such as t.translate()'
-      );
-    }
-    return f.apply(null, arguments);
-  };
-
-  return g;
-};
+const EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE =
+  'Deprecation warning: usage of t8on singleton\'s properties ' +
+  'and methods imported manually is considered deprecated. ' +
+  'All *named* exports except Translation will be removed ' +
+  'in upcoming major release. Please export the singleton and call ' +
+  'its methods directly, such as t.translate()';
 
 const t = new Translation();
 
-export const format = deprecated(t.format);
-export const formatTo = deprecated(t.formatTo);
-export const formatCurrent = deprecated(t.formatCurrent);
+export const format = deprecate(t.format, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const formatTo = deprecate(t.formatTo, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const formatCurrent = deprecate(t.formatCurrent, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
 
-export const translate = deprecated(t.translate);
-export const translateTo = deprecated(t.translateTo);
-export const translateCurrent = deprecated(t.translateCurrent);
+export const translate = deprecate(t.translate, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const translateTo = deprecate(t.translateTo, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const translateCurrent = deprecate(t.translateCurrent, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
 
-export const load = deprecated(t.load);
-export const loadRoot = deprecated(t.loadRoot);
-export const setLocale = deprecated(t.setLocale);
+export const load = deprecate(t.load, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const loadRoot = deprecate(t.loadRoot, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
+export const setLocale = deprecate(t.setLocale, EXPORTED_SINGLETON_METHODS_DEPRECATION_NOTICE);
 
 export const currentLocale = t.currentLocale;
 export const fallbackLocale = t.fallbackLocale;
